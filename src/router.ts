@@ -20,7 +20,7 @@ const routes = [
 
 const router = new VueRouter({
   base: process.env.BASE_URL,
-  mode: "history",
+  mode: process.env.IS_ELECTRON ? "hash" : "history",
   routes,
 })
 

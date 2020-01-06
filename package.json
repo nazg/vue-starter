@@ -3,12 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "serve:app": "vue-cli-service electron:serve",
     "serve:web": "vue-cli-service serve",
+    "build:app": "vue-cli-service electron:build",
     "build:web": "vue-cli-service build",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
+  "main": "background.js",
   "dependencies": {
     "core-js": "^3.6.1",
     "esm": "^3.2.25",
@@ -35,6 +40,7 @@
     "@vue/eslint-config-standard": "5.0.1",
     "@vue/eslint-config-typescript": "5.0.1",
     "@vue/test-utils": "1.0.0-beta.30",
+    "electron": "^7.1.7",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "2.19.1",
     "eslint-plugin-node": "11.0.0",
@@ -49,6 +55,7 @@
     "tailwindcss": "^1.1.4",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.7.4",
+    "vue-cli-plugin-electron-builder": "^1.4.4",
     "vue-template-compiler": "^2.6.11"
   }
 }

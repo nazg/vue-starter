@@ -5,4 +5,9 @@ module.exports = {
     config.resolve.plugin("tsconfig-paths").use(require("tsconfig-paths-webpack-plugin"))
   },
   outputDir: "dist/web",
+  pluginOptions: {
+    electronBuilder: {
+      outputDir: "dist/app",
+    },
+  },
 }
