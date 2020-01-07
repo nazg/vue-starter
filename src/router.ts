@@ -1,5 +1,6 @@
 
-import SampleRoute from "./views/SampleRoute.vue"
+import IndexView from "./views/IndexView.vue"
+import SectionView from "./views/SectionView.vue"
 import Vue from "vue"
 import VueRouter from "vue-router"
 
@@ -7,15 +8,16 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    component: SampleRoute,
-    name: SampleRoute.name,
+    component: IndexView,
+    name: "index-view",
     path: "/",
   },
-  // {
-  //   component: () => import(/* webpackChunkName: "name" */ "../views/ViewComponent.vue"),
-  //   name: "name",
-  //   path: "/path",
-  // },
+  {
+    component: SectionView,
+    name: "section-view",
+    path: "/section/:name/",
+    props: true,
+  },
 ]
 
 const router = new VueRouter({

@@ -1,7 +1,7 @@
 
 import { register } from "register-service-worker"
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "production" && <boolean><unknown>process.env.IS_ELECTRON === false) {
   register(`${process.env.BASE_URL}service-worker.js`, {
     cached() {
       // eslint-disable-next-line no-console
